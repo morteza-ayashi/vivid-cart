@@ -27,7 +27,7 @@ class ResetPasswordController
             ->first();
 
         if (! $tokenData || ! Hash::check($validated['token'], $tokenData->token)) {
-            return back()->withErrors(['email' => __('Invalid token or email')]);
+            return back()->withErrors(['email' => __('Invalid token or email.')]);
         }
 
         $user = User::whereEmail($email)->first();
