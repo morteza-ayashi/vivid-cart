@@ -42,6 +42,6 @@ class EmailVerificationController
 
         $user->notify(new VerifyEmail($user));
 
-        return back()->with(['info' => __('Verification link sent')]);
+        return back()->with(['info' => __('Verification link sent.')]);
     }
 }
