@@ -27,6 +27,6 @@ class WelcomeEmail extends Mailable
         $locale = app()->getLocale();
 
         return $this->view("auth::mail.{$locale}.welcome", ['user' => $this->user])
-            ->subject(__('Welcome to') . ' ' . config('app.name'));
+            ->subject(__('Welcome to :app', ['app' => config('app.name')]));
     }
 }

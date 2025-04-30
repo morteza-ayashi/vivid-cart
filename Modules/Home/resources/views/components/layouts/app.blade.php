@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }} {{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'fa' ? 'rtl' : 'ltr' }}">
     <head>
         <x-home::section.meta />
          <title>{{ config('app.name') }} - {{ $title ?? 'Home' }}</title>
@@ -7,7 +7,7 @@
         <x-home::section.css />
         @stack('styles')
     </head>
-    <body>
+    <body class="{{ app()->getLocale() === 'fa' ? 'rtl' : 'ltr' }}">
         <x-home::section.header />
         @if(Route::currentRouteNamed('home'))
             <x-home::section.navbar :categories="$categories" />
