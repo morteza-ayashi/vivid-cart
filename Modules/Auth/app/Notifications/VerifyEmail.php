@@ -43,8 +43,10 @@ class VerifyEmail extends Notification
             ]
         );
 
+        $locale = app()->getLocale();
+
         return (new MailMessage)->view(
-            'auth::mail.verify-email', ['url' => $url]
+            "auth::mail.{$locale}.verify-email", ['url' => $url]
         );
     }
 

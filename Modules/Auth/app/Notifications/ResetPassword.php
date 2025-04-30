@@ -31,8 +31,10 @@ class ResetPassword extends Notification
      */
     public function toMail($notifiable): MailMessage
     {
+        $locale = app()->getLocale();
+
         return (new MailMessage)->view(
-            'auth::mail.reset-password', ['url' => $this->url]
+            "auth::mail.{$locale}.reset-password", ['url' => $this->url]
         );
     }
 
