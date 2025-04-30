@@ -73,7 +73,7 @@ class ResetPasswordTest extends TestCase
             'password_confirmation' => 'new-password'
         ]));
 
-        $response->assertSessionHasErrors(['email' => __('Invalid token or email')]);
+        $response->assertSessionHasErrors(['email' => __('Invalid token or email.')]);
         $this->assertFalse(Hash::check('new-password', $this->user->fresh()->password));
     }
 
@@ -87,7 +87,7 @@ class ResetPasswordTest extends TestCase
             'password_confirmation' => 'new-password',
         ]));
 
-        $response->assertSessionHasErrors(['email' => __('Invalid token or email')]);
+        $response->assertSessionHasErrors(['email' => __('Invalid token or email.')]);
         $this->assertFalse(Hash::check('new-password', $this->user->fresh()->password));
     }
 
