@@ -3,11 +3,12 @@
 namespace Modules\Auth\Listeners;
 
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
 use Modules\Auth\Emails\WelcomeEmail;
 use Modules\User\Models\User;
 
-class SendWelcomeEmail
+class SendWelcomeEmail implements ShouldQueue
 {
     /**
      * Handle the event.

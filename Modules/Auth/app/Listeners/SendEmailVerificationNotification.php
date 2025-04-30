@@ -3,10 +3,11 @@
 namespace Modules\Auth\Listeners;
 
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Modules\Auth\Notifications\VerifyEmail;
 use Modules\User\Models\User;
 
-class SendEmailVerificationNotification
+class SendEmailVerificationNotification implements ShouldQueue
 {
     /**
      * Create the event listener.
