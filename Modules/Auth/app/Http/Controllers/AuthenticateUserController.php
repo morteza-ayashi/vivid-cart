@@ -29,7 +29,7 @@ class AuthenticateUserController
         }
 
         return back()->withErrors([
-            'email' => __('The provided credentials do not match our records')
+            'email' => __('The provided credentials do not match our records.')
         ])->onlyInput('email');
     }
 
