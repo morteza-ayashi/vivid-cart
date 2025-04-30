@@ -6,27 +6,6 @@
 
             <div class="col-span-8 border border-gray-200 p-4 rounded">
                 <h3 class="text-lg font-medium capitalize mb-4">Checkout</h3>
-                <div class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label for="first_name" class="text-gray-600">First Name <span
-                                    class="text-primary">*</span></label>
-                            <input type="text" name="first_name" id="first_name" class="input-box @error('first_name') border-red-500 @enderror" value="{{ old('first_name') }}">
-
-                            @error('first_name')
-                                <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div>
-                            <label for="last_name" class="text-gray-600">Last Name <span
-                                    class="text-primary">*</span></label>
-                            <input type="text" name="last_name" id="last_name" class="input-box @error('last_name') border-red-500 @enderror" value="{{ old('last_name') }}">
-
-                            @error('last_name')
-                                <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
-                    </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label for="address" class="text-gray-600">Address <span

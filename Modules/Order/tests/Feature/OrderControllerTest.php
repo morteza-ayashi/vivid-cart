@@ -84,30 +84,8 @@ class OrderControllerTest extends TestCase
     public function it_cannot_submit_order_with_invalid_data(): void
     {
         $testCases = [
-            'missing_first_name' => [
-                'payload' => [
-                    'first_name'     => null,
-                    'last_name'      => 'Doe',
-                    'address'        => '123 Main St',
-                    'payment_method' => PaymentMethod::CREDIT_CARD->value,
-                    'phone'          => '1234567890',
-                ],
-                'field' => __('first_name'),
-            ],
-            'missing_last_name' => [
-                'payload' => [
-                    'first_name'     => 'John',
-                    'last_name'      => null,
-                    'address'        => '123 Main St',
-                    'payment_method' => PaymentMethod::CREDIT_CARD->value,
-                    'phone'          => '1234567890',
-                ],
-                'field' => __('last_name'),
-            ],
             'missing_address' => [
                 'payload' => [
-                    'first_name'     => 'John',
-                    'last_name'      => 'Doe',
                     'address'        => null,
                     'payment_method' => PaymentMethod::CREDIT_CARD->value,
                     'phone'          => '1234567890',
@@ -116,8 +94,6 @@ class OrderControllerTest extends TestCase
             ],
             'address_too_short' => [
                 'payload' => [
-                    'first_name'     => 'John',
-                    'last_name'      => 'Doe',
                     'address'        => 'Short',
                     'payment_method' => PaymentMethod::CREDIT_CARD->value,
                     'phone'          => '1234567890',
@@ -126,8 +102,6 @@ class OrderControllerTest extends TestCase
             ],
             'invalid_payment_method' => [
                 'payload' => [
-                    'first_name'     => 'John',
-                    'last_name'      => 'Doe',
                     'address'        => '123 Main St',
                     'payment_method' => 'invalid_method',
                     'phone'          => '1234567890',
@@ -136,8 +110,6 @@ class OrderControllerTest extends TestCase
             ],
             'missing_phone' => [
                 'payload' => [
-                    'first_name'     => 'John',
-                    'last_name'      => 'Doe',
                     'address'        => '123 Main St',
                     'payment_method' => PaymentMethod::CREDIT_CARD->value,
                     'phone'          => null,
@@ -146,8 +118,6 @@ class OrderControllerTest extends TestCase
             ],
             'phone_too_short' => [
                 'payload' => [
-                    'first_name'     => 'John',
-                    'last_name'      => 'Doe',
                     'address'        => '123 Main St',
                     'payment_method' => PaymentMethod::CREDIT_CARD->value,
                     'phone'          => '12345',
@@ -156,8 +126,6 @@ class OrderControllerTest extends TestCase
             ],
             'phone_too_long' => [
                 'payload' => [
-                    'first_name'     => 'John',
-                    'last_name'      => 'Doe',
                     'address'        => '123 Main St',
                     'payment_method' => PaymentMethod::CREDIT_CARD->value,
                     'phone'          => '12345678901234567',
@@ -176,8 +144,6 @@ class OrderControllerTest extends TestCase
 
             $this->assertDatabaseMissing('orders', [
                 'user_id'        => $this->user->id,
-                'first_name'     => $data['payload']['first_name'] ?? null,
-                'last_name'      => $data['payload']['last_name'] ?? null,
                 'address'        => $data['payload']['address'] ?? null,
                 'payment_method' => $data['payload']['payment_method'] ?? null,
                 'phone'          => $data['payload']['phone'] ?? null,

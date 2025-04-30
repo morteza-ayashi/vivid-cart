@@ -14,8 +14,6 @@ class StoreOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name'     => ['required', 'string', 'max:255'],
-            'last_name'      => ['required', 'string', 'max:255'],
             'address'        => ['required', 'string', 'min:10', 'max:255'],
             'payment_method' => ['required', Rule::enum(PaymentMethod::class)],
             'phone'          => ['required', 'string', 'min:10', 'max:15'],
