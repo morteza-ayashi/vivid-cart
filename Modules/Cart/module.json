@@ -3,7 +3,7 @@
     "alias": "cart",
     "description": "",
     "keywords": [],
-    "priority": 0,
+    "priority": 5,
     "providers": [
         "Modules\\Cart\\Providers\\CartServiceProvider"
     ],

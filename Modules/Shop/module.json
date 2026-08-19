@@ -3,7 +3,7 @@
     "alias": "shop",
     "description": "",
     "keywords": [],
-    "priority": 0,
+    "priority": 10,
     "providers": [
         "Modules\\Shop\\Providers\\ShopServiceProvider"
     ],

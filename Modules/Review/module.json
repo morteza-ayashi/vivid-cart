@@ -3,7 +3,7 @@
     "alias": "review",
     "description": "",
     "keywords": [],
-    "priority": 0,
+    "priority": 9,
     "providers": [
         "Modules\\Review\\Providers\\ReviewServiceProvider"
     ],

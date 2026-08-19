@@ -3,7 +3,7 @@
     "alias": "category",
     "description": "",
     "keywords": [],
-    "priority": 0,
+    "priority": 3,
     "providers": [
         "Modules\\Category\\Providers\\CategoryServiceProvider"
     ],

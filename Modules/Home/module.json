@@ -3,7 +3,7 @@
     "alias": "home",
     "description": "",
     "keywords": [],
-    "priority": 0,
+    "priority": 11,
     "providers": [
         "Modules\\Home\\Providers\\HomeServiceProvider"
     ],

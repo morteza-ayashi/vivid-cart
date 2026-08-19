@@ -3,7 +3,7 @@
     "alias": "wishlist",
     "description": "",
     "keywords": [],
-    "priority": 0,
+    "priority": 6,
     "providers": [
         "Modules\\Wishlist\\Providers\\WishlistServiceProvider"
     ],
